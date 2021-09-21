@@ -2,3 +2,4 @@
 from . import sale_line
 from . import sale
 from . import partner
+from . import product

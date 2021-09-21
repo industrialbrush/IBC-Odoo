@@ -23,15 +23,15 @@
             </t>
         </t>
         <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style" style="position:relative; margin-bottom:5px;">
-            <div class="row">
+            <div class="row header-alignment">
                 <div class="col-3 mb4">
                     <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" width='120' height='75' alt="Logo"/>
                 </div>
-                <div class="col-9 text-right" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
+                <div class="col-9 text-right;" style="margin-top:22px;" t-field="company.report_header" name="moto"/>
                 <div style="font-size:22px" class="col-6 text-center">
                     <strong>SALES ORDER - <span t-esc="o.name"/></strong>
                 </div>
-                <div style="font-size:22px" class="col-2 text-right">
+                <div style="font-size:22px; width:25%;" class="text-right">
                     <strong><span t-field="o.partner_id.group"/></strong>
                 </div>
                 
@@ -42,18 +42,18 @@
                 </div>
             </div> -->
             <div class="row">
-                <div style='font-size: 12px' class="col-6" name="company_address">
+                <div style='font-size: 14px;margin-left:5px;' class="col-6" name="company_address">
                     <div t-field="company.partner_id"
                         t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
                     />
                 </div>
-                <div style='font-size: 12px;position:absolute; top:40px;z-index:10;' class="col-6">
+                <div style='font-size: 14px;position:absolute; top:40px;z-index:10; left:350px;' class="col-6">
                     <div><strong>Date:</strong> <span t-field="o.date_order"/></div>
                     <div><strong>Customer:</strong> <span t-esc="o.partner_id.name"/></div>
                     <div><strong>PO: </strong><span t-field="o.client_order_ref"/></div>
-                    <div><strong>Contact:</strong> <span t-field="o.partner_id.email"/></div>
+                    <!-- <div><strong>Contact:</strong> <span t-field="o.partner_id.email"/></div> -->
                     <div><strong>Email:</strong> <span t-field="o.partner_id.email"/></div>
-                    <div><strong>Phone:</strong> <span t-field="o.partner_id.phone"/> <strong>Fax:</strong> <span t-esc="o.partner_id.fax"/></div>
+                    <div class="row" style="width:100%;margin-left:1px;"><div style="margin-left:0;width:50%;"><strong>Phone:</strong> <span t-field="o.partner_id.phone"/></div> <div class="text-right" style="margin-right:0;width:50%;"> <strong>Fax:</strong> <span t-esc="o.partner_id.fax"/></div></div>
                 </div>
             </div>
         </div>
