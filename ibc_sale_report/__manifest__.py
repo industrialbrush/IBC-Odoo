@@ -19,13 +19,12 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale'],
+    'depends': ['base', 'sale','product'],
 
     # always loaded
     'data': [
         'report/header_footer.xml',
         'report/report_sale.xml',
-        'report/reports.xml',
         'views/sale_order_inherit.xml',
         'views/res_partner_inherit.xml'
     ],
